@@ -12,3 +12,7 @@ def signup_view(request):
 		form = signupForm(request.POST)
 		if form.is_valid():
 			return render(request, 'accounts/signup.html')
+	else:
+		form = signupForm()
+
+		return render(request, 'accounts/signup.html', {'form': form})
