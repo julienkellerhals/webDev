@@ -1,5 +1,11 @@
 from django.shortcuts import render
+from django.http import HttpResponseRedirect
+
+from .forms import signupForm
 
 # Create your views here.
 def signup_view(request):
-	return render(request, 'accounts/signup.html')
+	if request.method == 'POST':
+		form = signupForm(request.POST)
+		if form.is_valid():
+			return render(request, 'accounts/signup.html')
