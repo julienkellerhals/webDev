@@ -7,4 +7,6 @@ class Dev(models.Model):
     last_name = models.CharField(max_length)
     email = models.EmailField()
     password = models.CharField(max_length=25)
- 
+    projects = models.PositiveIntegerField() # hmmm
+    status = models.PositiveSmallIntegerField()
+    profile_pic = models.CharField(max_lenght=30) # path 
